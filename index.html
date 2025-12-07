@@ -68,7 +68,6 @@ body {
   transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
 }
 
-.miniature-box.open,
 .miniature:hover > .miniature-box {
   opacity: 1;
   visibility: visible;
@@ -174,6 +173,69 @@ footer a {
 footer a:hover {
   color: #a9d6ff;
 }
+
+/* ----------- MOBİL NAVBAR EKLEMELERİ ----------- */
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBİL MENÜ */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #00698f;
+  border-radius: 6px;
+  margin-top: 8px;
+  padding: 12px;
+}
+
+.mobile-menu a {
+  padding: 10px 8px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  margin: 4px 0;
+}
+
+/* Mobil alt menü */
+.mobile-sub span {
+  display: block;
+  padding: 10px 8px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 4px 0;
+}
+
+.mobile-sub-items {
+  display: none;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+.mobile-sub-items a {
+  margin: 3px 0;
+}
+
+/* MOBİL GİZLE / MASAÜSTÜ GÖSTER */
+@media (max-width: 768px) {
+  .miniature,
+  .navbar a,
+  .language-switcher {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
 </style>
 
 </head>
@@ -187,6 +249,13 @@ footer a:hover {
 
   <!-- NAVBAR -->
   <div class="navbar">
+    
+    <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburgerBtn">
+      <i class='bx bx-menu'></i>
+    </div>
+
+    <!-- NORMAL MENÜ (MASAÜSTÜ) -->
     <a href="index.html">Home <i class='bx bx-home-alt'></i></a>
     <a href="about.html">About <i class='bx bx-user'></i></a>
 
@@ -202,15 +271,12 @@ footer a:hover {
 
         <a href="Portrait.html">Portrait</a>
         <a href="Expressionism.html">Expressionism</a>
-        <a href="motive.html">Iranian Illumination & Mystic Motifs</a>
-
-
-        
+        <a href="motive.html">Iranian Illumination & Mystic Motifs</a>
         <a href="Impressionism.html">Impressionism</a>
       </div>
     </div>
 
-    <!-- 🔥 BAYRAKLI DİL SEÇİCİ -->
+    <!-- BAYRAKLAR -->
     <div class="language-switcher">
       <img src="https://flagsapi.com/GB/flat/32.png" data-lang="en" alt="English">
       <img src="https://flagsapi.com/IR/flat/32.png" data-lang="fa" alt="Farsi">
@@ -221,9 +287,27 @@ footer a:hover {
 
   </div>
 
-  <style>
-    
-  </style>
+  <!-- MOBİL MENÜ -->
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+
+    <div class="mobile-sub">
+      <span>Miniature ▼</span>
+      <div class="mobile-sub-items">
+        <a href="iranian_miniature.html">Iranian miniature</a>
+        <a href="figur_miniature.html">Figure miniature</a>
+      </div>
+    </div>
+
+    <a href="Portrait.html">Portrait</a>
+    <a href="Expressionism.html">Expressionism</a>
+    <a href="motive.html">Iranian Illumination & Mystic Motifs</a>
+    <a href="Impressionism.html">Impressionism</a>
+
+  </div>
+
 
   <!-- CONTENT -->
   <div class="content">
@@ -244,26 +328,18 @@ footer a:hover {
   </p>
 
   <p>
-    <i class='bx bxl-instagram' style="color:#c13584; font-size:1.4rem; margin-right:6px;"></i>
+    <i class='bx bxl-instinstagram' style="color:#c13584; font-size:1.4rem; margin-right:6px;"></i>
     Instagram:
     <a href="https://www.instagram.com/shahrzad.artist/">https://www.instagram.com/shahrzad.artist/</a>
   </p>
-<style>
-  .icon-circle.facebook {
-  background: #1877F2;
-}
 
-</style>
   <p>
-  <span class="icon-circle">
-    <i class='bx bxl-facebook'></i>
-  </span>
-  Facebook:
-  <a href="https://www.facebook.com/share/17M6jmZ5X7/?mibextid=wwXIfr">
-    https://www.facebook.com/share/17M6jmZ5X7/?mibextid=wwXIfr
-  </a>
-</p>
-
+    <i class='bx bxl-facebook' style="color:#1877F2; font-size:1.4rem; margin-right:6px;"></i>
+    Facebook:
+    <a href="https://www.facebook.com/share/17M6jmZ5X7/?mibextid=wwXIfr">
+      https://www.facebook.com/share/17M6jmZ5X7/?mibextid=wwXIfr
+    </a>
+  </p>
 
   <p>
     <i class='bx bx-palette' style="color:#ffb400; font-size:1.4rem; margin-right:6px;"></i>
@@ -272,37 +348,17 @@ footer a:hover {
   </p>
 
 
-<div class="management">
-        <p>Representation(Management): <br> </p>
-</div>
+  <div class="management">
+    <p>Representation(Management): <br> </p>
+  </div>
 
-<style>
-  .management p{
-    margin-top: 12px;
-    font-weight: bold;
-    color: #140831;
-  }
-</style>
-   
   <p>
-              <p>Behrouz Mohebi Moghaddam <br> <br>
+    <b>Behrouz Mohebi Moghaddam</b> <br>
     <i class='bx bxl-whatsapp' style="color:#25D366; font-size:1.4rem; margin-right:6px;"></i>
-
     WhatsApp:+90 501 077 97 55 <br>
-    <a href="https://wa.me">
-
-    <div class="cont">
-      Email: behrouzmohebi@gmail.com <br></p>
-      </div>
-
-      <style>
-        .cont p{
-          font-weight: bold;
-          text-decoration: none;
-        }
-      </style>
-    </a>
+    Email: behrouzmohebi@gmail.com
   </p>
+
 </section>
 
 
@@ -346,7 +402,25 @@ document.querySelectorAll(".language-switcher img").forEach(flag => {
     document.querySelector("#contact-heading").textContent = translations[lang].contact;
   });
 });
+
+/* HAMBURGER JS */
+const hamBtn = document.getElementById("hamburgerBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamBtn.addEventListener("click", () => {
+  mobileMenu.style.display =
+    mobileMenu.style.display === "flex" ? "none" : "flex";
+});
+
+document.querySelector(".mobile-sub span").addEventListener("click", () => {
+  const sub = document.querySelector(".mobile-sub-items");
+  sub.style.display = sub.style.display === "flex" ? "none" : "flex";
+});
 </script>
 
 </body>
 </html>
+
+
+
+

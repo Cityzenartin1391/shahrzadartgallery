@@ -196,28 +196,67 @@ footer p {
   <img src="banner02.jpg" alt="Banner">
 </div>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <div class="navbar">
+    
+  <!-- HAMBURGER (MOBILE) -->
+  <div class="hamburger" id="hamburgerBtn">
+    <i class='bx bx-menu'></i>
+  </div>
+
+  <!-- DESKTOP MENU -->
   <a href="index.html">Home <i class='bx bx-home-alt'></i></a>
-  <a href="about.html">About <i class='bx bx-info-circle'></i></a>
+  <a href="about.html">About <i class='bx bx-user'></i></a>
 
   <div class="miniature">
-    <a href="#" class="menu-toggle" aria-haspopup="true" aria-expanded="false">
-      Artworks <i class='bx bx-collection'></i>
-    </a>
-    <div class="miniature-box" role="menu" aria-hidden="true">
+    <a href="#" class="menu-toggle">Artworks <i class='bx bx-collection'></i></a>
+
+    <div class="miniature-box">
+
       <a class="has-sub">Miniature</a>
       <div class="submenu">
         <a href="iranian_miniature.html">Iranian miniature</a>
         <a href="figur_miniature.html">Figure miniature</a>
       </div>
+
       <a href="Portrait.html">Portrait</a>
       <a href="Expressionism.html">Expressionism</a>
-        <a href="motive.html">Iranian Illumination & Mystic Motifs</a>
-
+      <a href="motive.html">Iranian Illumination & Mystic Motifs</a>
       <a href="Impressionism.html">Impressionism</a>
     </div>
   </div>
+
+  <!-- LANGUAGE FLAGS -->
+  <div class="language-switcher">
+    <img src="https://flagsapi.com/GB/flat/32.png" data-lang="en" alt="English">
+    <img src="https://flagsapi.com/IR/flat/32.png" data-lang="fa" alt="Farsi">
+    <img src="https://flagsapi.com/RU/flat/32.png" data-lang="ru" alt="Russian">
+    <img src="https://flagsapi.com/TR/flat/32.png" data-lang="tr" alt="Turkish">
+    <img src="https://flagsapi.com/CN/flat/32.png" data-lang="cn" alt="Chinese">
+  </div>
+
+</div>
+
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+
+  <div class="mobile-sub">
+    <span>Miniature ▼</span>
+    <div class="mobile-sub-items">
+      <a href="iranian_miniature.html">Iranian miniature</a>
+      <a href="figur_miniature.html">Figure miniature</a>
+    </div>
+  </div>
+
+  <a href="Portrait.html">Portrait</a>
+  <a href="Expressionism.html">Expressionism</a>
+  <a href="motive.html">Iranian Illumination & Mystic Motifs</a>
+  <a href="Impressionism.html">Impressionism</a>
+
 </div>
 
 <!-- GALLERY -->
@@ -270,6 +309,7 @@ footer p {
     <p>📸 <a href="https://instagram.com/shahrzad.artist" target="_blank">instagram.com/shahrzad.artist</a></p>
     <p>🎨 <a href="https://www.saatchiart.com/en-tr/shahrzadfineart" target="_blank">saatchiart.com/en-tr/shahrzadfineart</a></p>
   </footer>
+  
 
 <!-- Dropdown Script -->
 <script>

@@ -19,34 +19,34 @@ body {
   width: 100%;
   height: auto;
   border-radius: 6px;
-  margin-bottom: 20px;
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
   background-color: #00698f;
   padding: 5px 10px;
   border-radius: 6px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
+/* Navbar links */
 .navbar a {
-  color: #fff;
+  color: white;
   background: rgba(255,255,255,0.06);
   padding: 8px 12px;
   border-radius: 6px;
   text-decoration: none;
   transition: background 0.18s, transform 0.12s;
 }
+
 .navbar a:hover {
   transform: translateY(-2px);
   background: rgba(255,255,255,0.12);
 }
 
-/* Dropdown */
+/* DROPDOWN */
 .miniature {
   position: relative;
   display: inline-block;
@@ -68,7 +68,6 @@ body {
   transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
 }
 
-.miniature-box.open,
 .miniature:hover > .miniature-box {
   opacity: 1;
   visibility: visible;
@@ -81,18 +80,18 @@ body {
   color: #01203a;
   text-decoration: none;
   border-radius: 6px;
-  transition: background 120ms, color 120ms;
-}
-.miniature-box a:hover {
-  background: linear-gradient(90deg,#e6f6ff,#dfeeff);
-  color: #001525;
 }
 
-/* Submenu */
+.miniature-box a:hover {
+  background: #e9f4ff;
+}
+
+/* SUBMENU */
 .has-sub {
   position: relative;
   cursor: pointer;
 }
+
 .has-sub::after {
   content: "▶";
   position: absolute;
@@ -116,7 +115,6 @@ body {
   visibility: hidden;
   transform: translateX(10px);
   transition: all 180ms ease;
-  z-index: 1000;
 }
 
 .has-sub:hover + .submenu,
@@ -126,56 +124,39 @@ body {
   transform: translateX(0);
 }
 
-/* Content */
-.content {
-  margin-top: 30px;
+/* LANGUAGE SWITCHER (FLAG BUTTONS) */
+.language-switcher {
+  margin-left: auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: center;
 }
 
-/* Art Image */
-.art-image {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 8px;
-  flex: 1 1 400px;
+.language-switcher img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Art Details */
-.art-details {
-  flex: 1 1 400px;
+.language-switcher img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(255,255,255,0.6);
 }
 
-.art-details h1 {
+/* CONTENT */
+.content h1 {
   color: rgb(0, 51, 102);
-  margin-bottom: 15px;
 }
 
-.art-details p {
+.content p {
   color: rgb(51, 51, 51);
   font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 8px;
 }
 
-/* Buy Button */
-.buy-button {
-  display: inline-block;
-  background-color: #004c6d;
-  color: #fff;
-  padding: 12px 20px;
-  text-decoration: none;
-  border-radius: 6px;
-  margin-top: 15px;
-  transition: background 0.2s;
-}
-.buy-button:hover {
-  background-color: #00698f;
-}
-
-/* Footer */
+/* FOOTER */
 footer {
   background-color: #000;
   color: #fff;
@@ -185,19 +166,75 @@ footer {
   margin-top: 40px;
   font-size: 0.95rem;
 }
-
 footer a {
   color: #68b8ff;
   text-decoration: none;
-  transition: color 0.2s;
 }
-
 footer a:hover {
   color: #a9d6ff;
 }
 
-footer p {
-  margin: 8px 0;
+/* ----------- MOBİL NAVBAR EKLEMELERİ ----------- */
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBİL MENÜ */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #00698f;
+  border-radius: 6px;
+  margin-top: 8px;
+  padding: 12px;
+}
+
+.mobile-menu a {
+  padding: 10px 8px;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  margin: 4px 0;
+}
+
+/* Mobil alt menü */
+.mobile-sub span {
+  display: block;
+  padding: 10px 8px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 4px 0;
+}
+
+.mobile-sub-items {
+  display: none;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+.mobile-sub-items a {
+  margin: 3px 0;
+}
+
+/* MOBİL GİZLE / MASAÜSTÜ GÖSTER */
+@media (max-width: 768px) {
+  .miniature,
+  .navbar a,
+  .language-switcher {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 </style>
 </head>
@@ -210,28 +247,67 @@ footer p {
     <img src="banner02.jpg" alt="Banner">
   </div>
 
-  <!-- Navbar -->
+  <!-- NAVBAR -->
 <div class="navbar">
+    
+  <!-- HAMBURGER (MOBILE) -->
+  <div class="hamburger" id="hamburgerBtn">
+    <i class='bx bx-menu'></i>
+  </div>
+
+  <!-- DESKTOP MENU -->
   <a href="index.html">Home <i class='bx bx-home-alt'></i></a>
-  <a href="about.html">About <i class='bx bx-info-circle'></i></a>
+  <a href="about.html">About <i class='bx bx-user'></i></a>
 
   <div class="miniature">
-    <a href="#" class="menu-toggle" aria-haspopup="true" aria-expanded="false">
-      Artworks <i class='bx bx-collection'></i>
-    </a>
-    <div class="miniature-box" role="menu" aria-hidden="true">
+    <a href="#" class="menu-toggle">Artworks <i class='bx bx-collection'></i></a>
+
+    <div class="miniature-box">
+
       <a class="has-sub">Miniature</a>
       <div class="submenu">
         <a href="iranian_miniature.html">Iranian miniature</a>
         <a href="figur_miniature.html">Figure miniature</a>
       </div>
+
       <a href="Portrait.html">Portrait</a>
       <a href="Expressionism.html">Expressionism</a>
-        <a href="motive.html">Iranian Illumination & Mystic Motifs</a>
-
+      <a href="motive.html">Iranian Illumination & Mystic Motifs</a>
       <a href="Impressionism.html">Impressionism</a>
     </div>
   </div>
+
+  <!-- LANGUAGE FLAGS -->
+  <div class="language-switcher">
+    <img src="https://flagsapi.com/GB/flat/32.png" data-lang="en" alt="English">
+    <img src="https://flagsapi.com/IR/flat/32.png" data-lang="fa" alt="Farsi">
+    <img src="https://flagsapi.com/RU/flat/32.png" data-lang="ru" alt="Russian">
+    <img src="https://flagsapi.com/TR/flat/32.png" data-lang="tr" alt="Turkish">
+    <img src="https://flagsapi.com/CN/flat/32.png" data-lang="cn" alt="Chinese">
+  </div>
+
+</div>
+
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+
+  <div class="mobile-sub">
+    <span>Miniature ▼</span>
+    <div class="mobile-sub-items">
+      <a href="iranian_miniature.html">Iranian miniature</a>
+      <a href="figur_miniature.html">Figure miniature</a>
+    </div>
+  </div>
+
+  <a href="Portrait.html">Portrait</a>
+  <a href="Expressionism.html">Expressionism</a>
+  <a href="motive.html">Iranian Illumination & Mystic Motifs</a>
+  <a href="Impressionism.html">Impressionism</a>
+
 </div>
 
   <!-- Content -->
@@ -256,6 +332,12 @@ footer p {
     <p>📸 <a href="https://instagram.com/shahrzad.artist" target="_blank">instagram.com/shahrzad.artist</a></p>
     <p>🎨 <a href="https://www.saatchiart.com/en-tr/shahrzadfineart" target="_blank">saatchiart.com/en-tr/shahrzadfineart</a></p>
   </footer>
+
+
+
+
+  
+  
 </div>
 
 <!-- Dropdown Script -->
