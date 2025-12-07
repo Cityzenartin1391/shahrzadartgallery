@@ -55,6 +55,10 @@
   <a href="The Garden of Imagination.html"><img src="The Garden Of Imagination.jpg" alt="The Garden of Imagination"></a>
   
   
+
+
+  
+  
   <p>The Garden of Imagination</p>
 </div>
 
@@ -165,7 +169,7 @@ body {
   margin-bottom: 15px;
 }
 
-/* ---- NAVBAR (Beğendiğin Stile Göre) ---- */
+/* ---- NAVBAR ---- */
 .navbar {
   background-color: #00698f;
   padding: 5px 10px;
@@ -189,7 +193,7 @@ body {
   background: rgba(255,255,255,0.12);
 }
 
-/* ---- DROPDOWN ---- */
+/* DROPDOWN */
 .miniature {
   position: relative;
   display: inline-block;
@@ -231,7 +235,7 @@ body {
   color: #001525;
 }
 
-/* Alt menü (Miniature sağda açılır) */
+/* Alt menü */
 .has-sub {
   position: relative;
   cursor: pointer;
@@ -269,7 +273,30 @@ body {
   transform: translateX(0);
 }
 
-/* ---- GALLERY GRID ---- */
+/* MOBILE MENU DEFAULT STYLE */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #004c6d;
+  padding: 15px;
+  border-radius: 8px;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.mobile-menu a {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.09);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+/* GALLERY GRID */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -305,7 +332,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* ---- FOOTER ---- */
+/* FOOTER */
 footer {
   background-color: #000;
   color: #fff;
@@ -319,14 +346,9 @@ footer {
 footer a {
   color: #68b8ff;
   text-decoration: none;
-  transition: color 0.2s;
 }
 
 footer a:hover {
   color: #a9d6ff;
-}
-
-footer p {
-  margin: 8px 0;
 }
 </style>
